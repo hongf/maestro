@@ -1,0 +1,339 @@
+<html lang="en">
+  <head>
+    <title>Austrac DS maestro playground</title>
+    <link rel="shortcut icon"
+      href="https://austrac.gov.au/themes/custom/austrac-theme/favicon.ico"
+      type="image/vnd.microsoft.icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+    <style>
+      .tab-content textarea{
+        padding:16px;
+        width:100%;
+      }
+    </style>
+    <script>
+    </script>
+  </head>
+  <body>
+
+    <div
+      class="container">
+      <form name="theForm" id="theForm" method="post" action="test.htm"
+        target="_blank">
+        <textarea name="xmlData" id="smartform-xml" style="display: none;" ></textarea>
+        <div
+          class="py-5
+          text-center">
+          <h2>Maestro form test platform(with pre populated data)
+          </h2>
+          <p
+            class="lead"></p>
+        </div>
+        <div
+          class="row"><div
+            class="col-sm-12
+            col-md-6
+            col-lg-4">
+            <div
+              class="input-group
+              mb-3">
+              <div
+                class="input-group-append">
+                <label
+                  class="input-group-text"
+                  for="inputGroupSelect02">Environment</label>
+              </div><select
+                class="custom-select"
+                id="selectEnv" onchange="updateButtonText()">
+                <option
+                  value="https://forms.uat.business.gov.au">UAT</option>
+               
+                <option
+                  value="https://forms.test.business.gov.au">TEST</option>
+                <option
+                  value="https://forms.business.gov.au">Prod</option>
+              </select>
+            </div>
+          </div>
+          <div
+            class="col-sm-12
+            col-md-6
+            col-lg-4">
+            <div
+              class="input-group
+              mb-3">
+              <div
+                class="input-group-append">
+                <label
+                  class="input-group-text"
+                  for="inputGroupSelect02">Forms</label>
+              </div><select
+                class="custom-select"
+                id="selectForm" onchange="updateButtonText()">
+                <option
+                  value="ATRC1001H">ATRC1001H</option>
+                <option
+                  value="ATRC1020HD">ATRC1020HD</option>
+                <option
+                  value="ATRC1020HR">ATRC1020HR</option>
+                <option
+                  value="ATRC1021H">ATRC1021H</option>
+
+              
+              </select>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row
+          m-1">
+          <div
+            class="col-xs-12">
+            <nav>
+              <div
+                class="nav
+                nav-tabs"
+                id="nav-tab"
+                role="tablist">
+                <a class="nav-link active" id="BusinessDetails-tab"
+                  data-toggle="tab" href="#BusinessDetails" role="tab"
+                  aria-controls="BusinessDetails" aria-selected="true">Business
+                  details</a>
+                <a class="nav-link" id="DesignatedService-tab" data-toggle="tab"
+                  href="#DesignatedService" role="tab"
+                  aria-controls="DesignatedService" aria-selected="false">Designated
+                  service</a>
+                <a class="nav-link" id="RegistrationDetails-tab"
+                  data-toggle="tab" href="#RegistrationDetails" role="tab"
+                  aria-controls="RegistrationDetails" aria-selected="false">Registration
+                  details</a>
+                <a class="nav-link" id="CRDetails-tab" data-toggle="tab"
+                  href="#CRDetails" role="tab" aria-controls="CRDetails"
+                  aria-selected="false">Industry contribution</a>
+                <a class="nav-link" id="NonREDetails-tab" data-toggle="tab"
+                  href="#NonREDetails" role="tab" aria-controls="NonREDetails"
+                  aria-selected="false">Other details</a>
+                <a class="nav-link" id="RegistrationRemovalDetails-tab"
+                  data-toggle="tab" href="#RegistrationRemovalDetails"
+                  role="tab" aria-controls="RegistrationRemovalDetails"
+                  aria-selected="false">Registration removal</a>
+                <a class="nav-link" id="RegistrationRenewalDetails-tab"
+                  data-toggle="tab" href="#RegistrationRenewalDetails"
+                  role="tab" aria-controls="RegistrationRenewalDetails"
+                  aria-selected="false">Registration renewal</a>
+                <a class="nav-link" id="Declaration-tab" data-toggle="tab"
+                  href="#Declaration" role="tab" aria-controls="Declaration"
+                  aria-selected="false">Declaration</a>
+                <a class="nav-link" id="System-tab" data-toggle="tab"
+                  href="#System" role="tab" aria-controls="System"
+                  aria-selected="false">System</a>
+
+
+              </div>
+            </nav>
+            <div
+              class="tab-content"
+              id="nav-tabContent">
+              <div class="tab-pane fade show active" id="BusinessDetails"
+                role="tabpanel" aria-labelledby="BusinessDetails-tab"> <textarea
+                  rows="30"
+                  id="txt-xml-BusinessDetails">
+                </textarea></div>
+              <div class="tab-pane fade" id="DesignatedService" role="tabpanel"
+                aria-labelledby="DesignatedService-tab"> <textarea
+                  rows="30"
+                  id="txt-xml-DesignatedService">
+                </textarea></div>
+
+              <div class="tab-pane fade" id="RegistrationDetails"
+                role="tabpanel" aria-labelledby="RegistrationDetails-tab">
+                <textarea
+                  rows="30"
+                  id="txt-xml-RegistrationDetails">
+                </textarea></div>
+              <div class="tab-pane fade" id="CRDetails" role="tabpanel"
+                aria-labelledby="CRDetails-tab"> <textarea
+                  rows="30"
+                  id="txt-xml-CRDetails">
+                </textarea></div>
+              <div class="tab-pane fade" id="NonREDetails" role="tabpanel"
+                aria-labelledby="NonREDetails-tab"> <textarea
+                  rows="30"
+                  id="txt-xml-NonREDetails">
+                </textarea></div>
+              <div class="tab-pane fade" id="RegistrationRemovalDetails"
+                role="tabpanel"
+                aria-labelledby="RegistrationRemovalDetails-tab"> <textarea
+                  rows="30"
+                  id="txt-xml-RegistrationRemovalDetails">
+                </textarea> </div>
+              <div class="tab-pane fade" id="RegistrationRenewalDetails"
+                role="tabpanel"
+                aria-labelledby="RegistrationRenewalDetails-tab"> <textarea
+                  rows="30"
+                  id="txt-xml-RegistrationRenewalDetails">
+                </textarea></div>
+              <div class="tab-pane fade" id="Declaration" role="tabpanel"
+                aria-labelledby="Declaration-tab"> <textarea
+                  rows="30"
+                  id="txt-xml-Declaration">
+                </textarea> </div>
+              <div class="tab-pane fade" id="System" role="tabpanel"
+                aria-labelledby="System-tab"> <textarea
+                  rows="30"
+                  id="txt-xml-System">
+                </textarea></div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+        <div class="row m-3 d-flex justify-content-center">
+
+          <button id="btn-luanch-form" type="button" class="btn btn-info" onclick="launchForm()"  >Launch selected form</button>
+        </div>
+      </div>
+      <footer
+        class="my-5
+        pt-5
+        text-muted
+        text-center
+        text-small">
+        <p
+          class="mb-1">©
+          2020
+          AUSTRAC</p>
+      </footer>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <script>
+        function launchForm(){ 
+
+        var xmlData = "<?xml version=\"1.0\" ?><SmartForm><FormData>";
+        for(prop in dataset){
+         if( prop!=='System'){
+          xmlData += $(`#txt-xml-${prop}`).val(); 
+         }
+        }
+  
+        xmlData += "</FormData>";
+        xmlData += document.getElementById("txt-xml-System").value;
+        xmlData += "</SmartForm>";
+     
+        var formCode=$('#selectForm').val();
+        
+        var targetUrl = `${$('#selectEnv').val()}/smartforms/servlet/SmartForm.${formCode.toUpperCase().indexOf('ATRC')===0?'html':'pdf'}?formCode=${formCode}`;
+                 console.log('targetUrl',targetUrl); 
+        $("#smartform-xml").val (xmlData);
+          theForm.action = targetUrl;
+          theForm.submit();
+        }
+
+        function updateButtonText(){
+          $('#btn-luanch-form').html(`Launch form ${$('#selectForm').val()} on ${$( "#selectEnv option:selected" ).text()}`);
+        }
+        
+         
+         function formatXMl(xml) {
+                var reg = /(>)\s*(<)(\/*)/g; // updated Mar 30, 2015
+                var wsexp = / *(.*) +\n/g;
+                var contexp = /(<.+>)(.+\n)/g;
+                xml = xml.replace(reg, '$1\n$2$3').replace(wsexp, '$1\n').replace(contexp, '$1\n$2');
+                var pad = 0;
+                var formatted = '';
+                var lines = xml.split('\n');
+                var indent = 0;
+                var lastType = 'other';
+                // 4 types of tags - single, closing, opening, other (text, doctype, comment) - 4*4 = 16 transitions 
+                var transitions = {
+                    'single->single': 0,
+                    'single->closing': -1,
+                    'single->opening': 0,
+                    'single->other': 0,
+                    'closing->single': 0,
+                    'closing->closing': -1,
+                    'closing->opening': 0,
+                    'closing->other': 0,
+                    'opening->single': 1,
+                    'opening->closing': 0,
+                    'opening->opening': 1,
+                    'opening->other': 1,
+                    'other->single': 0,
+                    'other->closing': -1,
+                    'other->opening': 0,
+                    'other->other': 0
+                };
+        
+                for (var i = 0; i < lines.length; i++) {
+                    var ln = lines[i];
+        
+                    // Luca Viggiani 2017-07-03: handle optional <?xml ... ?> declaration
+                    if (ln.match(/\s*<\?xml/)) {
+                        formatted += ln + "\n";
+                        continue;
+                    }
+                    // ---
+        
+                    var single = Boolean(ln.match(/<.+\/>/)); // is this line a single tag? ex. <br />
+                    var closing = Boolean(ln.match(/<\/.+>/)); // is this a closing tag? ex. </a>
+                    var opening = Boolean(ln.match(/<[^!].*>/)); // is this even a tag (that's not <!something>)
+                    var type = single ? 'single' : closing ? 'closing' : opening ? 'opening' : 'other';
+                    var fromTo = lastType + '->' + type;
+                    lastType = type;
+                    var padding = '';
+        
+                    indent += transitions[fromTo];
+                    for (var j = 0; j < indent; j++) {
+                        padding += '\t';
+                    }
+                    if (fromTo == 'opening->closing')
+                        formatted = formatted.substr(0, formatted.length - 1) + ln + '\n'; // substr removes line break (\n) from prev loop
+                    else
+                        formatted += padding + ln + '\n';
+                }
+        
+                return formatted;
+            };
+            let dataset={
+         BusinessDetails:'<BusinessDetails><LegalName>SMARTFORM TEST PTY LTD</LegalName><BusinessStructure><Type>CPUB</Type></BusinessStructure><BusinessRegistrationNumbers><ACN>123123124</ACN><ACNNotRequired></ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired></BusinessRegistrationNumbers><MainTradingNameDetails><DifferentToLegal>Yes</DifferentToLegal><TradingName>SMARTFORM TEST "MAIN" TRADING NAME</TradingName><TradingNumber>293866283787</TradingNumber><RegistrationCountry>AU</RegistrationCountry><RegistrationState>NSW</RegistrationState></MainTradingNameDetails><AdditionalTradingNameDetails><HaveOtherTradingDetails>Yes</HaveOtherTradingDetails><TradingDetails><TradingDetail><TradingName>SMARTFORM TEST TRADING NAME</TradingName><TradingNumber>546454564545</TradingNumber><RegistrationCountry>AU</RegistrationCountry><RegistrationState>NSW</RegistrationState></TradingDetail></TradingDetails></AdditionalTradingNameDetails><PrincipalAddress><AddressLine1>BUSINESS ADDRESS 30</AddressLine1><Suburb>BONDI</Suburb><State>SA</State><Postcode>5606</Postcode><Country>AU</Country></PrincipalAddress><PostalAddress><SameAs>OTH</SameAs><AddressLine1>POSTAL GOES HERE 1</AddressLine1><Suburb>SYDNEY</Suburb><State>NSW</State><Postcode>2000</Postcode><Country>AU</Country></PostalAddress><RegisteredOfficeAddress><SameAs>OTH</SameAs><AddressLine1>REG ADDRESS 1</AddressLine1><Suburb>RYDE</Suburb><State>NSW</State><Postcode>2112</Postcode><Country>AU</Country></RegisteredOfficeAddress><Contact><Telephone>0294195959</Telephone><Fax>0294195958</Fax><Email>bbc@austrac.gov.au</Email></Contact><Website><HaveWebsite>Yes</HaveWebsite><AdditionalComments>www.bbc.gov.au</AdditionalComments></Website><BusinessNature><Category>Money service businesses</Category><SubCategory>PY</SubCategory></BusinessNature><Partners><Partner><Option>Individual</Option><Individual><Name><Title>MR</Title><OtherTitle /><FirstName>PERSON ONE</FirstName><LastName>PARTNER</LastName></Name><Position>First Partner</Position><DOB /><Address><Required /><SameAs /><AddressLine1>1 PERSON PARTNER RD</AddressLine1><Suburb>PERSON ONE PARTNER SUBURB</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><Contact><Telephone>0212345678</Telephone><Fax>0287654321</Fax><Email>person.one.partner@partnership.com.au</Email></Contact></Individual></Partner><Partner><Option>Individual</Option><Individual><Name><Title>MR</Title><OtherTitle /><FirstName>PERSON TWO</FirstName><LastName>PARTNER</LastName></Name><Position>Second Partner</Position><DOB /><Address><Required /><SameAs /><AddressLine1>2 PERSON PARTNER RD</AddressLine1><Suburb>PERSON TWO PARTNER SUBURB</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><Contact><Telephone>0212345678</Telephone><Fax>0287654321</Fax><Email>person.two.partner@partnership.com.au</Email></Contact></Individual></Partner><Partner><Option>Company</Option><Company><LegalName>PARTNER COMPANY ONE INC.</LegalName><Address><Required /><SameAs /><AddressLine1>1 PARTNER COMPANY RD</AddressLine1><Suburb>PARTNER COMPANY ONE SUBURB</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><RegistrationNumbers><ACN /><ACNNotRequired>1</ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired><OtherNumber /><OtherDesc /><OtherCountryOfIssue /></RegistrationNumbers></Company></Partner><Partner><Option>Company</Option><Company><LegalName>PARTNER COMPANY TWO INC.</LegalName><Address><Required /><SameAs /><AddressLine1>2 PARTNER COMPANY RD</AddressLine1><Suburb>PARTNER COMPANY TWO SUBURB</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><RegistrationNumbers><ACN /><ACNNotRequired>1</ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired><OtherNumber /><OtherDesc /><OtherCountryOfIssue /></RegistrationNumbers></Company></Partner><Partner><Option>Trust</Option><Trust><LegalName>TRUSTEE FOR A TRUST</LegalName><Address><Required /><SameAs /><AddressLine1>2 TRUST COMPANY RD</AddressLine1><Suburb>TRUST SUBURB</Suburb><State>NSW</State><Postcode>2065</Postcode><Country>AU</Country></Address><RegistrationNumbers><ACN /><ACNNotRequired>1</ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired><OtherNumber /><OtherDesc /><OtherCountryOfIssue /></RegistrationNumbers></Trust></Partner></Partners><Trustees><Trustee><Option>Individual</Option><Individual><Name><Title>MR</Title><OtherTitle /><FirstName>PERSON ONE</FirstName><LastName>TRUSTEE</LastName></Name><Position>First Trustee</Position><DOB /><Address><Required /><SameAs /><AddressLine1>1 PERSON TRUSTEE RD</AddressLine1><Suburb>PERSON ONE TRUSTEE SUBURB</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><Contact><Telephone>0212345678</Telephone><Fax>0287654321</Fax><Email>person.one.trustee@trust.com.au</Email></Contact></Individual></Trustee><Trustee><Option>Individual</Option><Individual><Name><Title>MR</Title><OtherTitle /><FirstName>PERSON TWO</FirstName><LastName>TRUSTEE</LastName></Name><Position>Second Trustee</Position><DOB /><Address><Required /><SameAs /><AddressLine1>2 PERSON TRUSTEE RD</AddressLine1><Suburb>PERSON TWO TRUSTEE SUBURB</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><Contact><Telephone>0212345678</Telephone><Fax>0287654321</Fax><Email>person.two.trustee@trust.com.au</Email></Contact></Individual></Trustee><Trustee><Option>Company</Option><Company><LegalName>TRUSTEE COMPANY ONE INC.</LegalName><Address><Required /><SameAs /><AddressLine1>1 TRUSTEE COMPANY RD</AddressLine1><Suburb>TRUSTEE COMPANY ONE SUBURB</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><RegistrationNumbers><ACN /><ACNNotRequired>1</ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired><OtherNumber /><OtherDesc /><OtherCountryOfIssue /></RegistrationNumbers></Company></Trustee><Trustee><Option>Company</Option><Company><LegalName>TRUSTEE COMPANY TWO INC.</LegalName><Address><Required /><SameAs /><AddressLine1>2 TRUSTEE COMPANY RD</AddressLine1><Suburb>TRUSTEE COMPANY TWO SUBURB</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><RegistrationNumbers><ACN /><ACNNotRequired>1</ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired><OtherNumber /><OtherDesc /><OtherCountryOfIssue /></RegistrationNumbers></Company></Trustee></Trustees><OperateInAustralia>Yes</OperateInAustralia><ResidentOfAustralia>Yes</ResidentOfAustralia><SubsidiaryResidentOfAustralia>No</SubsidiaryResidentOfAustralia></BusinessDetails>', 
+         DesignatedService:'<DesignatedServiceDetails><ServicesRequired>Yes</ServicesRequired><ServicesProvided><AccountDepositServices>1</AccountDepositServices><EFT>1</EFT><FinancingProducts>1</FinancingProducts><IssuingChequeBooks>1</IssuingChequeBooks><IssuingStoreValueCard>1</IssuingStoreValueCard><ForeignExchangeServices>1</ForeignExchangeServices><IssuingMoneyOrders>1</IssuingMoneyOrders><FinancialInstruments>1</FinancialInstruments><InsuranceServices>1</InsuranceServices><FirstHomeSaver /><CustodialDepositoryServices>1</CustodialDepositoryServices><CashCarryingPayrollServices>0</CashCarryingPayrollServices><FinancialAdvisoryServices /><BuySellBullion>1</BuySellBullion><BettingServices>1</BettingServices><BettingAccounts>1</BettingAccounts><GamesChanceSkill>1</GamesChanceSkill><OperatingGameMachine>1</OperatingGameMachine><GamingChips>1</GamingChips><MakeLoans>1</MakeLoans><GuaranteeLoans /><FactoringReceivables /><ForfaitingBills /><FinanceLeasing /><HirePurchase>1</HirePurchase><IssuingTravellersCheques>1</IssuingTravellersCheques><CurrencyExchange>1</CurrencyExchange><IssuingBillsExchange>1</IssuingBillsExchange><DealingSecurities /><IssuingSellingSecurities /><DealingBillsExchange /><RedeemingBearerBonds /><IssuingLifePolicies>1</IssuingLifePolicies><ProvidingPensions>1</ProvidingPensions><SuperannuationFunds>1</SuperannuationFunds><RetirementSavings /><CustodialDepository>1</CustodialDepository><SafeDepositBox /><MovingHoldingCurrency>0</MovingHoldingCurrency><PreparingPayRolls>0</PreparingPayRolls></ServicesProvided><Entitlement>42</Entitlement><CommencementDate>26/05/1982</CommencementDate><ComplianceOfficer><Name><Title>MR</Title><FirstName>TEST</FirstName><LastName>COMPOFFICER</LastName></Name><DOB>01/01/1966</DOB><Position>CEO</Position><Address><AddressLine1>PO BOX 48575</AddressLine1><Suburb>SYDNEY</Suburb><State>NSW</State><Postcode>2000</Postcode><Country>AU</Country></Address><Contact><Telephone>2545454</Telephone><Email>compofficer@bbc.com</Email></Contact></ComplianceOfficer><Remittance><RequireRemittance>Yes</RequireRemittance><Type><IndependentProvider>1</IndependentProvider><NetworkProvider>0</NetworkProvider><NetworkAffiliate>0</NetworkAffiliate></Type></Remittance><DigitalCurrencyExchange><RequireDigitalCurrencyExchange>Yes</RequireDigitalCurrencyExchange></DigitalCurrencyExchange></DesignatedServiceDetails>',
+         RegistrationDetails:'<RegistrationDetails><RequireUpdate>Yes</RequireUpdate><CommencementDate>01/01/1921</CommencementDate><DceCommencementDate/><ForeignRemittances><Required>No</Required></ForeignRemittances><DceForeignRegistrations><Required>Yes</Required><DceForeignRegistration><LicenseDescription/><LicenseNumber/><CountryOfIssue/></DceForeignRegistration></DceForeignRegistrations><OffenceTransactionReportAct>No</OffenceTransactionReportAct><CivilPenalty>No</CivilPenalty><CriminalProceedings>No</CriminalProceedings><RequireSubsidiaries>Yes</RequireSubsidiaries><Subsidiaries><Subsidiary><Business><LegalName>AAA Holding Corp.</LegalName><Address><Required>Yes</Required><AddressLine1>PO BOX 48575</AddressLine1><Suburb>SYDNEY</Suburb><State>NSW</State><Postcode>2000</Postcode><Country>AU</Country></Address><RegistrationNumbers><ACN /><ACNNotRequired>1</ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired><OtherNumber /><OtherDesc /><OtherCountryOfIssue /></RegistrationNumbers></Business><Directors><Director><Name><Title>MR</Title><OtherTitle /><FirstName>A</FirstName><LastName>Name</LastName></Name><Position>Boss</Position><DOB /><Address><Required /><SameAs /><AddressLine1>aaaa</AddressLine1><Suburb>aaaa</Suburb><State/><Postcode /><Country>USA</Country></Address><Contact><Telephone /><Fax /><Email /></Contact></Director><Director><Name><Title>MR</Title><OtherTitle /><FirstName>B</FirstName><LastName>Name</LastName></Name><Position>Second in command</Position><DOB /><Address><Required /><SameAs /><AddressLine1>bbbb</AddressLine1><Suburb>bbbb</Suburb><State/><Postcode /><Country>UK</Country></Address><Contact><Telephone /><Fax /><Email /></Contact></Director></Directors></Subsidiary><Subsidiary><Business><LegalName>Tax Dodge Ltd</LegalName><Address><Required>Yes</Required><AddressLine1>PO BOX 1</AddressLine1><Suburb>SYDNEY</Suburb><State>NSW</State><Postcode>2000</Postcode><Country>AU</Country></Address><RegistrationNumbers><ACN /><ACNNotRequired>1</ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired><OtherNumber /><OtherDesc /><OtherCountryOfIssue /></RegistrationNumbers></Business><Directors><Director><Name><Title>MR</Title><OtherTitle /><FirstName>SHADY</FirstName><LastName>SLIM</LastName></Name><Position>Director</Position><DOB /><Address><Required /><SameAs /><AddressLine1>cccc</AddressLine1><Suburb>cccc</Suburb><State/><Postcode /><Country>SI</Country></Address><Contact><Telephone /><Fax /><Email /></Contact></Director><Director><Name><Title>MR</Title><OtherTitle /><FirstName>BOARD</FirstName><LastName>MEMBER</LastName></Name><Position>Laundry Expert</Position><DOB /><Address><Required /><SameAs /><AddressLine1>dddd</AddressLine1><Suburb>dddd</Suburb><State/><Postcode /><Country>SK</Country></Address><Contact><Telephone /><Fax /><Email /></Contact></Director></Directors></Subsidiary></Subsidiaries><PersonnelInformation><Personnel><Details><Name><Title>MRS</Title><FirstName>TEST</FirstName><LastName>COMPOFFICER</LastName></Name><Position>CEO</Position><DOB>01/01/1986</DOB><Address><AddressLine1>PO BOX 2222</AddressLine1><Suburb>SYDNEY</Suburb><State>NSW</State><Postcode>2111</Postcode><Country>AU</Country></Address><Contact><Telephone>2545454</Telephone><Email>keyperson@bbc.com</Email></Contact></Details><OffenceTransactionReportAct>No</OffenceTransactionReportAct><CivilPenalty>No</CivilPenalty><CriminalProceedings>No</CriminalProceedings><DetailsCriminalProceedings/><BeneficialOwner>Yes</BeneficialOwner></Personnel><Personnel><Details><Name><Title>MS</Title><FirstName>KEY</FirstName><LastName>PERSON</LastName></Name><Position>PA</Position><DOB>11/11/1906</DOB><Address><AddressLine1>PO BOX 3333</AddressLine1><Suburb>SYDNEY</Suburb><State>NSW</State><Postcode>2111</Postcode><Country>AU</Country></Address><Contact><Telephone>2545454</Telephone><Email>pa@bbc.com</Email></Contact></Details><OffenceTransactionReportAct>No</OffenceTransactionReportAct><CivilPenalty>No</CivilPenalty><CriminalProceedings>No</CriminalProceedings><DetailsCriminalProceedings/><BeneficialOwner>Yes</BeneficialOwner></Personnel></PersonnelInformation><AffiliateApplication/><NetworkProviders><NetworkProvider><Name /><RegistrationNumber /></NetworkProvider></NetworkProviders></RegistrationDetails>',
+         CRDetails : '<CRDetails><ExemptAMLCTF>No</ExemptAMLCTF><FewerThanFiveEmployees>No</FewerThanFiveEmployees><RelatedReportingEntity>Yes</RelatedReportingEntity><HoldingCompany><LegalName>COMPANY CORP.</LegalName><Address><Required /><SameAs /><AddressLine1>COMPANY CORP RD</AddressLine1><Suburb>Chatswood</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><RegistrationNumbers><ACN /><ACNNotRequired>1</ACNNotRequired><ABN /><ABNNotRequired>1</ABNNotRequired><ARBN /><ARBNNotRequired>1</ARBNNotRequired><AFSL /><AFSLNotRequired>1</AFSLNotRequired><ACLN /><ACLNNotRequired>1</ACLNNotRequired><OtherNumberRequired>No</OtherNumberRequired><OtherNumber /><OtherDesc /><OtherCountryOfIssue /></RegistrationNumbers></HoldingCompany><Subsidiary>Yes</Subsidiary><PartOfGroupLeviEntities>No</PartOfGroupLeviEntities><DomesticEarnings100Million>Yes</DomesticEarnings100Million><DomesticEarningsAmount>1000000000</DomesticEarningsAmount><AllForeignLeviEntities /><NotAllForeignLeviEntitiesEarnings100Million /><NotAllForeignLeviEntitiesEarningsAmount /><AllForeignLeviEntitiesEarnings100Million /><AllForeignLeviEntitiesEarningsAmount /><CombinedEarnings100Million /><CombinedEarningsAmount /><CostRecoveryContactPersonOption>OTH</CostRecoveryContactPersonOption><CostRecoveryContactPerson><Name><Title>MR</Title><OtherTitle /><FirstName>COST RECOVERY</FirstName><LastName>CONTACT</LastName></Name><Position>Cost recovery Contact</Position><DOB /><Address><Required /><SameAs /><AddressLine1>1 COST REC RD</AddressLine1><Suburb>COSTREC</Suburb><State>NSW</State><Postcode>2064</Postcode><Country>AU</Country></Address><Contact><Telephone>0212345678</Telephone><Fax>0287654321</Fax><Email>costrec@com.au</Email></Contact></CostRecoveryContactPerson><CostRecoveryBillingAddress><SameAs>POS</SameAs></CostRecoveryBillingAddress></CRDetails> ',
+         NonREDetails:'<NonREDetails><ObligationsFinancialAct>Yes</ObligationsFinancialAct><PrimaryContactPerson><Name><Title>MR</Title><FirstName>Frank</FirstName><LastName>H</LastName></Name><Position>NOT SURE</Position><DOB>01/01/1901</DOB><Address><AddressLine1>PO BOX 2222</AddressLine1><Suburb>SYDNEY</Suburb><State>NSW</State><Postcode>2222</Postcode><Country>AU</Country></Address><Contact><Telephone>0246464646</Telephone><Fax>0257575757</Fax><Email>john.smith@austrac.gov.au</Email></Contact></PrimaryContactPerson></NonREDetails>',
+          RegistrationRemovalDetails: '<RegistrationRemovalDetails><IndependentProvider>1</IndependentProvider><RegistrationNumbers><RegistrationNumber>111-111-111-111/11-2011</RegistrationNumber><RegistrationNumber>222-222-222-222/02-2012</RegistrationNumber><RegistrationNumber>DCE-333-333-333/04-2018</RegistrationNumber></RegistrationNumbers></RegistrationRemovalDetails>',
+          RegistrationRenewalDetails : '<RegistrationRenewalDetails><RegistrationNumber>IND123456789-001</RegistrationNumber><LegalNameOfRegisteredEntity>THE REGISTERED ENTITY NAME</LegalNameOfRegisteredEntity><AffiliateRegistrations><AffiliateRegistration><AffiliateLegalName>FIRST AFFILIATE PTY LTD</AffiliateLegalName><ACN>002435010</ACN><ABN>23002435010</ABN><RegistrationNumber>AFF100012345-001</RegistrationNumber><ExpiryDate>01/01/2015</ExpiryDate></AffiliateRegistration><AffiliateRegistration><AffiliateLegalName>SECOND AFFILIATE WITH LONGER NAME PTY LTD</AffiliateLegalName><ACN>002535024</ACN><ABN>10002535024</ABN><RegistrationNumber>AFF100012345-002</RegistrationNumber><ExpiryDate>02/01/2015</ExpiryDate></AffiliateRegistration><AffiliateRegistration><AffiliateLegalName>THIRD AFFILIATE PTY LTD</AffiliateLegalName><ACN>002635038</ACN><ABN>86002635038</ABN><RegistrationNumber>AFF100012345-003</RegistrationNumber><ExpiryDate>03/01/2015</ExpiryDate></AffiliateRegistration><AffiliateRegistration><AffiliateLegalName>FOURTH AFFILIATE WITH VERY LONG NAME, TRUNCATED WHEN IT REACHES THE END OF THE TABLE CELL PROPRIETARY LIMITED</AffiliateLegalName><ACN>002635039</ACN><ABN>86002635039</ABN><RegistrationNumber>AFF100012345-004</RegistrationNumber><ExpiryDate>04/02/2015</ExpiryDate></AffiliateRegistration><AffiliateRegistration><AffiliateLegalName>COMPANY WHOSE LEGAL NAME HAPPENS 2B 49 CHARS LONG</AffiliateLegalName><ACN>002635040</ACN><ABN>86002635040</ABN><RegistrationNumber>AFF800088888-008</RegistrationNumber><ExpiryDate>05/02/2015</ExpiryDate></AffiliateRegistration><AffiliateRegistration><AffiliateLegalName>COMPANY WITH LEGAL NAME WITH 3 I S, 49 CHARS LONG</AffiliateLegalName><ACN>002635041</ACN><ABN>86002635041</ABN><RegistrationNumber>AFF900099999-009</RegistrationNumber><ExpiryDate>06/02/2015</ExpiryDate></AffiliateRegistration></AffiliateRegistrations></RegistrationRenewalDetails>',
+         Declaration : '<Declaration><DeclareOption>OTH</DeclareOption><Declarer><Name><Title>MR</Title><FirstName>Frank</FirstName><LastName>H</LastName></Name><Position>DEVELOPER</Position><DOB>01/01/1901</DOB><Address><AddressLine1>PO BOX 444</AddressLine1><Suburb>SYDNEY</Suburb><State>NSW</State><Postcode>2444</Postcode><Country>AU</Country></Address><Contact><Telephone>0246464646</Telephone><Fax>0257575757</Fax><Email>john.smith@austrac.gov.au</Email></Contact></Declarer><Declare /></Declaration>',
+         System : '<AlreadyOnRERoll>Yes</AlreadyOnRERoll><AustracContext><UUID>0f470a3d-a265-4530-a094-9c32787b9351</UUID><AAN>123456-789</AAN><DownloadTimestamp>01/04/2018 00:00:01</DownloadTimestamp><SchemaVersionNumber></SchemaVersionNumber><TemplateVersionNumber></TemplateVersionNumber><TemplateExpiryDate></TemplateExpiryDate><EnvironmentID>FRANK TOOL</EnvironmentID><RNPLookupURL></RNPLookupURL><FormGuideURL></FormGuideURL><DCE></DCE></AustracContext>',
+            }
+        
+         
+         for(prop in dataset){
+          $(`#txt-xml-${prop}`).val(formatXMl(dataset[prop]));
+         }
+         
+         $(function() {
+ updateButtonText();
+});
+         </script>
+
+</html>
